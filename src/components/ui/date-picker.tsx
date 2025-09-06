@@ -4,7 +4,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "./popover";
 import { cn } from "@//lib/utils";
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
-import { type ClassNames } from "react-day-picker";
+import { type ClassNames, getDefaultClassNames } from "react-day-picker";
 
 type DatePickerProps = {
   date: Date;
@@ -16,7 +16,7 @@ type DatePickerProps = {
 function DatePicker({
   date,
   setDate,
-  classNames = { month: "h-[350px]" },
+  classNames = { ...getDefaultClassNames(), month: "h-[350px]" },
   className,
 }: DatePickerProps) {
   return (
